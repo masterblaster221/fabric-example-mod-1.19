@@ -1,0 +1,5 @@
+{
+    "variants": {
+    "":  { "model": "life:block/temp"}
+    }
+}

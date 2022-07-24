@@ -1,0 +1,17 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "life:item/sword_of_a_hero"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 50],
+			"translation": [0, 4.75, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, -50],
+			"translation": [0, 4.75, 1]
+		}
+	}
+}
