@@ -1,14 +1,11 @@
 package endio.skills.from.life.entity.Pets;
 
-import io.github.theepicblock.polymc.api.entity.EntityPoly;
-import io.github.theepicblock.polymc.api.wizard.Wizard;
-import io.github.theepicblock.polymc.api.wizard.WizardInfo;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.passive.*;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -28,22 +25,12 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 
+public class Raccoon extends AnimalEntity implements IAnimatable {
 
-
-public class Raccoon extends AnimalEntity implements IAnimatable, EntityPoly {
-
-    private WizardInfo wizzy = WizardInfo()
-
-    private Wizard RaccoonEntityV = createWizard(, this)
     private AnimationFactory factory = new AnimationFactory(this);
 
     protected Raccoon(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
-    }
-
-    @Override
-    public Wizard createWizard(WizardInfo info, Entity entity) {
-        return null;
     }
 
     @Nullable
