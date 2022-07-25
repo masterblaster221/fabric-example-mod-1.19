@@ -31,6 +31,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 
 public class Raccoon extends AnimalEntity implements IAnimatable, EntityPoly {
+
+    private WizardInfo wizzy = WizardInfo()
+
+    private Wizard RaccoonEntityV = createWizard(, this)
     private AnimationFactory factory = new AnimationFactory(this);
 
     protected Raccoon(EntityType<? extends AnimalEntity> entityType, World world) {
@@ -41,7 +45,6 @@ public class Raccoon extends AnimalEntity implements IAnimatable, EntityPoly {
     public Wizard createWizard(WizardInfo info, Entity entity) {
         return null;
     }
-    
 
     @Nullable
     @Override
