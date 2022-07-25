@@ -37,15 +37,11 @@ public class Raccoon extends AnimalEntity implements IAnimatable, EntityPoly {
         super(entityType, world);
     }
 
-
-
     @Override
     public Wizard createWizard(WizardInfo info, Entity entity) {
         return null;
     }
-
-
-
+    
 
     @Nullable
     @Override
