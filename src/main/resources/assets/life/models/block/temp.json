@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "life:block/temp"
+        "all": "skillsfromlife:block/temp"
     }
 }

@@ -28,6 +28,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        SkillsFromLife.LOGGER.info("regestering Mod Items for " + SkillsFromLife.MOD_ID);
+        SkillsFromLife.LOGGER.info("regestering Mod Blocks for " + SkillsFromLife.MOD_ID);
     }
 }

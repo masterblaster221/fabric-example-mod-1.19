@@ -44,7 +44,7 @@ public class Raccoon extends AnimalEntity implements IAnimatable {
     }
 
 
-    protected void initGoals() {
+    public void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new TemptGoal(this, 1.1, Ingredient.ofItems(new ItemConvertible[]{Items.GOLD_NUGGET}), false));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0));

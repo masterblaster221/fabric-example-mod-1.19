@@ -13,6 +13,6 @@ public class RaccoonRenderer extends GeoEntityRenderer<Raccoon> {
 
     @Override
     public Identifier getTextureResource(Raccoon instance) {
-        return new Identifier(SkillsFromLife.MOD_ID, "textures/Entitys/Pets/raccoon.png");
+        return new Identifier(SkillsFromLife.MOD_ID, "textures/entities/raccoon.png");
     }
     }
