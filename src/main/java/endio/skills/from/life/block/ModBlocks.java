@@ -1,8 +1,8 @@
 package endio.skills.from.life.block;
 
+import endio.skills.from.life.SkillsFromLife;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import endio.skills.from.life.skillsfromlife;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -19,15 +19,15 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
-        return Registry.register(Registry.BLOCK, new Identifier(skillsfromlife.MOD_ID, name), block);
+        return Registry.register(Registry.BLOCK, new Identifier(SkillsFromLife.MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group) {
-        return Registry.register(Registry.ITEM, new Identifier(skillsfromlife.MOD_ID, name),
+        return Registry.register(Registry.ITEM, new Identifier(SkillsFromLife.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(group)));
     }
 
     public static void registerModBlocks() {
-        skillsfromlife.LOGGER.info("regestering Mod Items for " + skillsfromlife.MOD_ID);
+        SkillsFromLife.LOGGER.info("regestering Mod Items for " + SkillsFromLife.MOD_ID);
     }
 }

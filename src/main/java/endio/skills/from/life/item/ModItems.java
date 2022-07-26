@@ -2,7 +2,7 @@ package endio.skills.from.life.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
-import endio.skills.from.life.skillsfromlife;
+import endio.skills.from.life.SkillsFromLife;
 import endio.skills.from.life.item.custom.item.ModSwordHeroItem;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
@@ -28,10 +28,10 @@ public class ModItems {
 	public static final String ITEMS = null;
 
 	private static Item regesterItem(String name, Item item) {
-		return Registry.register(Registry.ITEM, new Identifier(skillsfromlife.MOD_ID, name), item);
+		return Registry.register(Registry.ITEM, new Identifier(SkillsFromLife.MOD_ID, name), item);
 	}
 
 	public static void regesterModItems() {
-		skillsfromlife.LOGGER.info("regestering Mod Items for " + skillsfromlife.MOD_ID);
+		SkillsFromLife.LOGGER.info("regestering Mod Items for " + SkillsFromLife.MOD_ID);
 	}
 }

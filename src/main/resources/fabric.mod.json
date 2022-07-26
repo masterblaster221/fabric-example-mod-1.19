@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "skillsfromlife",
+  "id": "SkillsFromLife",
   "version": "${version}",
 
   "name": "Skills",
@@ -19,7 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "endio.skills.from.life.skillsfromlife"
+      "endio.skills.from.life.SkillsFromLife"
+    ],
+    "client": [
+      "endio.skills.from.life.SkillsFromLifeClient"
     ],
     "polymc": [
       "io.github.theepicblock.ExampleEntrypoint"

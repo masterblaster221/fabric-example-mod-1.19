@@ -1,5 +1,8 @@
 package endio.skills.from.life.mixin;
 
-public class ExampleMixin {
 
-}
+import net.minecraft.client.gui.screen.TitleScreen;
+import org.spongepowered.asm.mixin.Mixin;
+
+@Mixin(TitleScreen.class)
+public class ExampleMixin {}
