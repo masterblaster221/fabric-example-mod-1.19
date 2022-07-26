@@ -23,9 +23,6 @@
     ],
     "client": [
       "endio.skills.from.life.SkillsFromLifeClient"
-    ],
-    "polymc": [
-      "io.github.theepicblock.ExampleEntrypoint"
     ]
   },
   "mixins": [
