@@ -9,7 +9,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.MobEntity;
+
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -51,7 +51,9 @@ public class Raccoon extends TameableEntity implements IAnimatable {
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return null;
     }
-
+    public static DefaultAttributeContainer.Builder setAttributes() {
+        return TameableEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.20000000298023224);
+    }
 
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
@@ -62,9 +64,6 @@ public class Raccoon extends TameableEntity implements IAnimatable {
         this.goalSelector.add(5, new LookAroundGoal(this));
     }
 
-    public static DefaultAttributeContainer.Builder setAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.20000000298023224);
-    }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
@@ -91,24 +90,28 @@ public class Raccoon extends TameableEntity implements IAnimatable {
         return factory;
     }
 
+    @Override
     protected SoundEvent getAmbientSound() {
         return SoundEvents.ENTITY_DOLPHIN_AMBIENT;
     }
 
+    @Override
     protected SoundEvent getHurtSound(DamageSource source) {
         return SoundEvents.ENTITY_DOLPHIN_HURT;
     }
 
+    @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.ENTITY_PIG_DEATH;
     }
 
+    @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
         this.playSound(SoundEvents.ENTITY_PIG_STEP, 0.15F, 1.0F);
     }
 
     /* TAMEABLE ENTITY */
-    public static final TrackedData<Boolean> SITTING =
+    private static final TrackedData<Boolean> SITTING =
             DataTracker.registerData(Raccoon.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     @Override
@@ -163,14 +166,11 @@ public class Raccoon extends TameableEntity implements IAnimatable {
     public void setTamed(boolean tamed) {
         super.setTamed(tamed);
         if (tamed) {
-            getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(60.0D);
-            getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(4D);
-            getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue((double)0.5f);
-        } else {
-            getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(30.0D);
-            getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(2D);
-            getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue((double)0.25f);
+            TameableEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH,
+                    10.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    0.20000000298023224).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1);
         }
+
     }
 
     @Override
