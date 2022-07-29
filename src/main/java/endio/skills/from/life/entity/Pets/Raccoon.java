@@ -1,5 +1,7 @@
 package endio.skills.from.life.entity.Pets;
 
+
+import io.netty.util.Attribute;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
@@ -12,7 +14,9 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
+
 import net.minecraft.entity.player.PlayerEntity;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
@@ -114,13 +118,14 @@ public class Raccoon extends TameableEntity implements IAnimatable {
     private static final TrackedData<Boolean> SITTING =
             DataTracker.registerData(Raccoon.class, TrackedDataHandlerRegistry.BOOLEAN);
 
+
+
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemstack = player.getStackInHand(hand);
         Item item = itemstack.getItem();
 
         Item itemForTaming = Items.GOLD_NUGGET;
-
         if (item == itemForTaming && !isTamed()) {
             if (this.world.isClient()) {
                 return ActionResult.CONSUME;
@@ -184,7 +189,6 @@ public class Raccoon extends TameableEntity implements IAnimatable {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(SITTING, nbt.getBoolean("isSitting"));
     }
-
     @Override
     public AbstractTeam getScoreboardTeam() {
         return super.getScoreboardTeam();

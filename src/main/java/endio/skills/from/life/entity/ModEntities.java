@@ -13,5 +13,5 @@ public class ModEntities {
     public static final EntityType<Raccoon> RACCOON = Registry.register(
             Registry.ENTITY_TYPE, new Identifier(SkillsFromLife.MOD_ID, "raccoon"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, Raccoon::new)
-                    .dimensions(EntityDimensions.fixed(0.4f, 0.3f)).build());
+                    .dimensions(EntityDimensions.fixed(0.4f, 0.45f)).build());
 }
